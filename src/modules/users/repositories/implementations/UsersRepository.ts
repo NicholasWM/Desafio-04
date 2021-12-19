@@ -37,7 +37,7 @@ class UsersRepository implements IUsersRepository {
   }
 
   turnAdmin(receivedUser: User): User {
-    this.users.map((user) =>
+    this.users = this.users.map((user) =>
       user.id === receivedUser.id ? { ...user, admin: true } : user
     );
     return { ...receivedUser, admin: true };
